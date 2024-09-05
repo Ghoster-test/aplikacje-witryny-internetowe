@@ -5,5 +5,26 @@ body{
 }
 #kontener{
 	width: 95%;
-	margin: ;
+	margin: auto;
+}
+#banner{
+	background-color: #00838F;
+	height: 200px;
+}
+menu{
+	background-color: #006064;
+	padding: 15px;
+}
+#menu a{
+	color: white;
+	text-decoration: none;
+	font-size: 150%;
+}
+#glowny1, #glowny1, #glowny3{
+	height: 350px;
+	width: 33%;
+	float: left;
+}
+#stopka{
+	background-color: #006064;
 }
