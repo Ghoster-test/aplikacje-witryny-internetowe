@@ -3,4 +3,7 @@ body{
 	font-family:Arial;
 	text-align:center;
 }
-#kontener{}
+#kontener{
+	width: 95%;
+	margin: ;
+}
