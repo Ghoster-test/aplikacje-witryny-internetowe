@@ -21,11 +21,11 @@
 <div id="glowny2">
 <h2>Kontakt</h2>
 <table>
-<tr><td>Imię:</td><td><input type="text"></td></tr>
-<tr><td>Nazwisko:</td><td><input type="text"></td></tr>
-<tr><td>E-mail:</td><td><input type="email"></td></tr>
+<tr><td>Imię:</td><td><input type="text" id="imie"></td></tr>
+<tr><td>Nazwisko:</td><td><input type="text" id="nazwisko"></td></tr>
+<tr><td>E-mail:</td><td><input type="email" id="mail"></td></tr>
 <tr><td>Zgłoszenie:</td><td>
-<select>
+<select id="usluga">
 <option>naprawa komputerów, </option>
 <option>odzyskiwanie danych,</option>
 <option> wirusy,</option>
@@ -33,9 +33,21 @@
 </select>
 </td></tr>
 <tr><td></td><td><input type="checkbox" checked>Wyślij kopię wiadomości</td></tr>
-<tr><td></td><td><input type="reset" value="Czyść">&nbsp;<input type="submit" value="Wyślij"></td></tr>
+<tr><td></td><td><input type="reset" value="Czyść">&nbsp;<input type="submit" value="Wyślij" onclick="dane()"></td></tr>
 </table>
 <hr>
+<p id="wynik"></p>
+<script type="text/Javascript">
+    function dane() {
+        var imie=document.getElementById("imie").value;
+        var nazwisko=document.getElementById("nazwisko").value;
+        var mail=document.getElementById("mail").value;
+        var usluga=document.getElementById("usluga").value;
+        var wynik=document.getElementById("wynik");
+        wynik.innerHTML=imie+" "+nazwisko+<br><p style='text-transform:lowercase'>"+mail+"</p>
+        Usług: "+usługa;
+}
+</script>
 </div>
 <div id="glowny3">
 
