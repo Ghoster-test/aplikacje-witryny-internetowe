@@ -2,16 +2,17 @@ body{
 	background-color:#E0F7FA;
 	font-family:Arial;
 	text-align:center;
+
 }
 #kontener{
 	width: 95%;
 	margin: auto;
 }
-#banner{
+#baner{
 	background-color: #00838F;
 	height: 200px;
 }
-menu{
+#menu{
 	background-color: #006064;
 	padding: 15px;
 }
@@ -20,11 +21,30 @@ menu{
 	text-decoration: none;
 	font-size: 150%;
 }
-#glowny1, #glowny1, #glowny3{
+#glowny1, #glowny2, #glowny3{
 	height: 350px;
 	width: 33%;
 	float: left;
 }
 #stopka{
 	background-color: #006064;
+	color:white;
+	text-align: right;
+	padding: 10px;
+	clear: both;
+}
+ul{
+	text-align: left;
+}
+input[type="reset"]{
+	background-repeat: #00838F;
+	color: white;
+}
+input[type="submit"]{
+	background-repeat: #00838F;
+	color: white;
+}
+input:hover{
+	background-repeat: #00838F;
+	color: white;
 }
