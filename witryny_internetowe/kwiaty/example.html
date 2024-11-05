@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styl.css">
+    <title>TEST</title>
+</head>
+<body>
+    <main>
+	<div id="pierwszy">
+	<input type="text" placeholder="Wpisz swoje imie …" id="imie" required>
+	<input type="text" placeholder="Wpisz swoje nawzisko …" id="nazwisko" required><br>
+	<button type="submit" onclick="pokaz1()">Następna karta</button>
+	</div>
+	
+	<div id="drugi">
+	<input type="email" placeholder="Wpisz adres email …" id="email"><br>
+	<input type="tel" placeholder="Wpisz numer telefonu …" id="tel"><br>
+	<button type="submit" onclick="pokaz2()">Następna karta</button>
+	</div>
+	
+	<div id="trzeci">
+	<input type="password" placeholder="Wpisz hasło …" id="haslo"><br>
+	<input type="password" placeholder="Powtórz hasło …" id="phaslo"><br>
+	<button type="submit" onclick="pokaz3()">Zatwierź</button>
+	</div>
+	
+	<script type="text/javascript">
+	function pokaz1(){
+	document.querySelector('#pierwszy').style.visibility='hidden';
+	document.querySelector('#drugi').style.visibility='visible';
+} 
+	function pokaz2(){
+	document.querySelector('#drugi').style.visibility='hidden';
+	document.querySelector('#trzeci').style.visibility='visible';
+}
+	function pokaz3(){
+	let imie = document.getElementById('imie').value;
+	let nazwisko = document.getElementById('nazwisko').value;
+	let haslo = document.getElementById('haslo').value;
+	let phaslo = document.getElementById('phaslo').value;
+
+	if (haslo!==phaslo){
+	alert('Hasla nie sa do siebie podobne');
+	console.log('Witaj ' + imie + " " + nazwisko);
+
+	}else{
+	console.log('Witaj ' + imie + " " + nazwisko);
+}
+}
+	</script>
+
+    </main>
+</body>
+</html>
