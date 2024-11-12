@@ -1,37 +1,38 @@
-*{
+* {
     font-family: Cambria;
 }
 
-body{
-    background-color: LInen;
+body {
+    background-color: linen;
 }
 
-#boczny, header, footer{
+#boczny, header, footer {
     background-color: steelblue;
     color: white;
     text-align: center;
 }
 
-#boczny{
+#boczny {
     width: 25%;
     height: 510px;
     margin: 0 1%;
-    box-shadow: 4px 4px 5px DimGrey;
+    float: left;
+    box-shadow: 4px 4px 5px dimgray;
 }
 
-header{
+header {
     width: 25%;
     height: 80px;
     float: left;
 }
 
-main{
+main {
     width: 73%;
     height: 400px;
     float: left;
 }
 
-button{
+button {
     background-color: steelblue;
     color: white;
     width: 20%;
@@ -41,28 +42,26 @@ button{
     border: none;
 }
 
-button:hover{
+button:hover {
     background-color: navy;
 }
-main>div{
+
+main > div {
     background-color: lightblue;
     margin-right: 80px;
     padding: 10px;
 }
-#postep{
-    background-color: lightgray;
-    width: 73%;
-    margin-bottom: 10px;
-}
-#postep div{
-    background-color: navy;
-    width: 4%;
-    height: 30px;
-}
-table{
+
+#postep {
     width: 100%;
-    border: 1px dotted navy;
-}
-footer{
+    height: 20px;
+    background-color: lightgray;
+    margin-top: 20px;
     clear: both;
+}
+
+#postep div {
+    width: 50%; /* Przykładowy postęp */
+    height: 100%;
+    background-color: green;
 }
