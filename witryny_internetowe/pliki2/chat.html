@@ -27,7 +27,43 @@
         </div>
         Wpisz wiadomość:<input type="text"><button onclick="wiadomosc()">Wyślij</button><br>
         <button onclick="odpowiedz()">Generuj losowa odpowiedź</button>
-        
+        <script type="text/javascript">
+            function odpowiedzi(){
+                const odpowiedzi = [
+"Świetnie!",
+"Kto gra główną rolę?",
+"Lubisz filmy Tego reżysera?",
+"Będę 10 minut wcześniej",
+"Może kupimy sobie popcorn?",
+"Ja wolę Colę",
+"Zaproszę jeszcze Grześka",
+"Tydzień temu też byłem w kinie na Diunie",
+"Ja funduję bilety"
+                ];
+            function odpowiedz(){
+                const randomIndex = Math.floor(Math.random() * odpowiedzi.length);
+                const randomResponse = odpowiedzi[randomIndex];
+                const czat = document.getElementById('krzysiek');
+                const krzysiekDiv = document.createElement('img');
+                krzysiekImg.src = 'Krzysiek.jpg'
+                krzysiek.alt = 'Krzysztof Łukasiński';
+                const krzysiekP = document.createElement('p');
+                krzysiekP.textContent = randomResponse;
+                krzysiekDiv.appendChild(krzysiekImg);
+                krzysiekDiv.appendChild(krzysiekP);
+                czat.appendChild(krzysiekDiv);
+
+                czat.scrollTop = chat.scrollHeight;
+                
+            }
+            }
+
+            function wiadomosc(){
+                let tekst = document.getElementById('tekst').value;
+                let czat = document.getElementById('czat');
+                czat.innerHTML=tekst;
+            }
+        </script>
     </main>
     <aside>
         <h3>Chaty</h3>
