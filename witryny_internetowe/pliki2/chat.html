@@ -1,70 +1,90 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <link rel="stylesheet" href="styl.css">
 </head>
-
 <body>
 
+    <header>
+        <h2>Chat</h2>
+    </header>
 
-        <header>
-            <h2>Chat</h2>
-        </header>
     <main>
         <div id="czat">
-            <div id="jolanta">
+            <div class="jolanta">
                 <img src="Jolka.jpg" alt="">
                 <p>Cześć idziesz jutro do kina?</p>
             </div>
-            <div id="krzysiek">
+            <div class="krzysiek">
                 <img src="Krzysiek.jpg" alt="">
                 <p>Tak! A ty?</p>
             </div>
         </div>
-        Wpisz wiadomość:<input type="text"><button onclick="wiadomosc()">Wyślij</button><br>
-        <button onclick="odpowiedz()">Generuj losowa odpowiedź</button>
+        
+        Wpisz wiadomość:
+        <input type="text" id="text">
+        <button onclick="wiadomosc()">Wyślij</button><br>
+        
+        <button onclick="odpowiedz()">Generuj losową odpowiedź</button>
+
         <script type="text/javascript">
-            function odpowiedzi(){
-                const odpowiedzi = [
-"Świetnie!",
-"Kto gra główną rolę?",
-"Lubisz filmy Tego reżysera?",
-"Będę 10 minut wcześniej",
-"Może kupimy sobie popcorn?",
-"Ja wolę Colę",
-"Zaproszę jeszcze Grześka",
-"Tydzień temu też byłem w kinie na Diunie",
-"Ja funduję bilety"
-                ];
             function odpowiedz(){
+                const odpowiedzi = [
+                    "Świetnie!", "Kto gra główną rolę?", "Lubisz filmy Tego reżysera?", 
+                    "Będę 10 minut wcześniej", "Może kupimy sobie popcorn?", 
+                    "Ja wolę Colę", "Zaproszę jeszcze Grześka", 
+                    "Tydzień temu też byłem w kinie na Diunie", "Ja funduję bilety"
+                ];
+
                 const randomIndex = Math.floor(Math.random() * odpowiedzi.length);
                 const randomResponse = odpowiedzi[randomIndex];
-                const czat = document.getElementById('krzysiek');
-                const krzysiekDiv = document.createElement('img');
-                krzysiekImg.src = 'Krzysiek.jpg'
-                krzysiek.alt = 'Krzysztof Łukasiński';
+                const czat = document.getElementById('czat');
+
+                const krzysiekDiv = document.createElement('div');
+                krzysiekDiv.classList.add('krzysiek');
+                
+                const krzysiekImg = document.createElement('img');
+                krzysiekImg.src = 'Krzysiek.jpg';
+                krzysiekImg.alt = 'Krzysztof Łukasiński';
+                
                 const krzysiekP = document.createElement('p');
                 krzysiekP.textContent = randomResponse;
+
                 krzysiekDiv.appendChild(krzysiekImg);
                 krzysiekDiv.appendChild(krzysiekP);
                 czat.appendChild(krzysiekDiv);
 
-                czat.scrollTop = chat.scrollHeight;
-                
-            }
+                czat.scrollTop = czat.scrollHeight;
             }
 
             function wiadomosc(){
-                let tekst = document.getElementById('tekst').value;
-                let czat = document.getElementById('czat');
-                czat.innerHTML=tekst;
+                const tekst = document.getElementById('text');
+                const czat = document.getElementById('czat');
+
+                const jolkaDiv = document.createElement('div');
+                jolkaDiv.classList.add('jolanta');
+                
+                const jolkaImg = document.createElement('img');
+                jolkaImg.src = 'Jolka.jpg';
+                jolkaImg.alt = 'Jolanta Nowak';
+
+                const jolkaP = document.createElement('p');
+                jolkaP.textContent = tekst.value;
+                
+                jolkaDiv.appendChild(jolkaImg);
+                jolkaDiv.appendChild(jolkaP);
+                czat.appendChild(jolkaDiv);
+                
+                czat.scrollTop = czat.scrollHeight;
+
+                tekst.value = '';
             }
         </script>
     </main>
+
     <aside>
         <h3>Chaty</h3>
         <ul>
@@ -84,84 +104,10 @@
         <p>Krzysztof Łukasiński</p>
         <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
     </aside>
+
     <footer>
         <h5>Chat wykonał: 00000000000</h5>
     </footer>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
-    <link rel="stylesheet" href="styl.css">
-</head>
-
-<body>
-
-    <main>
-        <header>
-            <h2>Chat</h2>
-        </header>
-
-        <div id="chat">
-            <div id="chatLeft">
-                <img src="Jolka.jpg" alt="">
-                <p>Cześć idziesz jutro do
-                    kina?</p>
-            </div>
-            <div id="chatRight">
-                <img src="Krzysiek.jpg" alt="">
-                <p>Tak! A ty?</p>
-            </div>
-        </div>
-        <label for="responseInput">Wpisz wiadomość:</label>
-        <input type="text" id="responseInput">
-        <button onclick="sendMessage()">Wyślij</button>
-        <br>
-        <button onclick="randomMessage()">Generuj losową odpowiedź</button>
-
-
-    </main>
-    <aside>
-        <h3>Chaty</h3>
-        <ul>
-            <li>Ogólny</li>
-            <li>Tematyczny
-                <ol>
-                    <li>Turystyczny</li>
-                    <li>żeglarski</li>
-                    <li>Filatelistyczny</li>
-                    <li>Hodowla zwierząt hodowlanych</li>
-                </ol>
-            </li>
-        </ul>
-        <h3>Uczestnicy</h3>
-        <p>Jolanta Nowak</p>
-        <img src="Jolka.jpg" alt="Jolanta Nowak">
-        <p>Krzysztof Łukasiński</p>
-        <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
-    </aside>
-    <footer>
-        <h5>Chat wykonał: 00000000000</h5>
-    </footer>
-
-</body>
-
-</html> -->

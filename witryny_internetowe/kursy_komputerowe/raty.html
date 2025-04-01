@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+<head>
+<meta charset="UTF-8">
+<title>Kursy kimputerowe</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+	<img src="baner.png" alt="kursy komputerowe">
+</header>
+<nav>
+	<a href="index.html"> Strona główna</a>
+	<a href="raty.html">Koszt rat</a>
+	<a href="https://moje-szkolenia.pl">Nasz partner</a>
+</nav>
+<section>
+<h3>Oblicz miesięczną ratę</h3>
+<label><input type="checkbox" class="kotrolki" id="react">Kurs React.js</label><br>
+<label><input type="checkbox" class="kotrolki" id="Javascript">Kurs Javascript</label><br>
+Liczba rat: <input type="number" class="kotrolki" id="liczbarat"><br>
+<select class="kontrolki" id="miasto">
+<option value="Warszawa">Warszawa</option>
+<option value="Katowice">Katowice</option>
+<option value="Gdańsk">Gdańsk</option>
+</select><br>
+<button type="submit" onclick="oblicz()" class="kotrolki" id="liczbarat">Oblicz</button>
+<p id="wynik"></p>
+</section>
+<script type="text/javascript">
+function oblicz(){
+let kosz_rat = 0;
+let całkowita_kwota = 0;
+let ile_rat = document.getElementById("liczbarat").value;
+let miasto = document.getElementById("miasto").value;
+if (document.getElementById("react").checked){
+całkowita_kwota += 5000;
+}
+if (document.getElementById("Javascript").checked){
+całkowita_kwota += 3000;
+}
+koszt_rat = Math.round(całkowita_kwota/ile_rat, 2);
+
+let wynik = document.getElementById("wynik");
+wynik.innerHTML = "Kurs odbędzie się w " + miasto + " koszt całkowity: " + "Koszt całkowity: " + całkowita_kwota + " zł. Płacisz " + ile_rat + " po: " + koszt_rat + " zł. "
+}
+</script>
+<footer>
+
+</footer>
+</body>
+</html>
+
