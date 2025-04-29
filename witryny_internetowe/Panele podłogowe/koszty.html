@@ -16,9 +16,27 @@
         <a href="koszty.html">Kalkulator kosztów</a>
     </nav>
     <main>
-
+<h1>Kalkulator kosztów montażu</h1>
+<label>Szerokość pomieszczenia w [m]:<input type="number" id="szerokosc"></label><br>
+<label>Długość pomieszczenia w [m]:<input type="number" id="dlugosc"></label><br>
+<p>Typ panelu</p>
+<label> <input type="radio" name="panele" id="laminowane">Panele laminowane</label><br>
+<label> <input type="radio" name="panele" id="winylowe">Panele winylowe</label><br>
+<label> <input type="radio" name="panele" id="deska">Deska podłogowa</label><br>
+<button onclick="oblicz()">Oblicz</button>
+<p id="wynik"></p>
+<script>
+    function oblicz(){
+        let szerokosc = document.getElementsById("szerokosc").value;
+        let dlugosc = document.getElementsById("dlugosc").value;
+        let laminowane = document.getElementsById("laminowane").checked;
+        let deska = document.getElementsById("deska").checked;
+        let deska = document.getElementsById("deska").checked;
+        
+        let wynik = document.getElementById("wynik").
+    }
+</script>
     </main>
-
     <footer>
 <h5>Autor strony: 1234567890</h5>
     </footer>
